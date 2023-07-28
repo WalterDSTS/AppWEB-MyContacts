@@ -27,8 +27,10 @@ export const InputSearchContainer = styled.div`
 export const Header = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ justifyContent }) => justifyContent};
   margin-top: 32px;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[100]};
+  padding-bottom: 16px;
 
   strong {
     font-size: 24px;
@@ -50,23 +52,26 @@ export const Header = styled.header`
   }
 `;
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.header`
   margin-top: 24px;
 
-  header {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 
-    button {
-      display: flex;
-      align-items: center;
-      border: none;
-      background: transparent;
+  button {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: transparent;
 
-      span {
-        margin-right: 8px;
-        font-weight: bold;
-        color: ${({ theme }) => theme.colors.primary.main};
-      }
+    span {
+      margin-right: 8px;
+      font-weight: bold;
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+
+    img {
+      transform: ${({ orderBy }) => (orderBy === 'asc' ? 'rotate(180deg)' : 'rotate(0deg)')};
+      transition: transform .2s ease-in;
     }
   }
 `;
@@ -110,11 +115,60 @@ export const Card = styled.div`
   .actions {
     display: flex;
     align-items: center;
+    gap: 8px;
 
     button {
       background: transparent;
       border: none;
-      margin-left: 8px;
     }
+  }
+`;
+
+export const ErrorContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+
+  .details {
+    margin-left: 24px;
+
+    strong {
+      display: block;
+      font-size: 22px;
+      color: ${({ theme }) => theme.colors.danger.main};
+    }
+
+    button {
+      margin-top: 8px;
+    }
+  }
+`;
+
+export const EmptyListContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 16px;
+
+  p {
+    text-align: center;
+    margin-top: 8px;
+    color: ${({ theme }) => theme.colors.gray[200]};
+
+    strong {
+      color: ${({ theme }) => theme.colors.primary.main};
+    }
+  }
+`;
+
+export const SearchNotFoundContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  margin-top: 16px;
+
+  span {
+    margin-left: 24px;
+    color: ${({ theme }) => theme.colors.gray[200]};
+    word-break: break-word;
   }
 `;

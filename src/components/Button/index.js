@@ -1,41 +1,42 @@
-import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 
-export default styled.button`
-  height: 52px;
-  border: none;
-  padding: 0 16px;
-  background: ${({ theme }) => theme.colors.primary.main};
-  font-size: 16px;
-  font-weight: bold;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
-  color: #fff;
-  border-radius: 4px;
-  transition: background .2s ease-in;
+import { StyledButton } from './styles';
+import Spinner from '../Spinner';
 
-  &:hover {
-    background: ${({ theme }) => theme.colors.primary.light};
-  }
+export default function Button({
+  type,
+  disabled,
+  isLoading,
+  children,
+  danger,
+  onClick,
+}) {
+  return (
+    <StyledButton
+      type={type}
+      disabled={disabled || isLoading}
+      danger={danger}
+      onClick={onClick}
+    >
+      {!isLoading && children}
+      {isLoading && <Spinner size={16} />}
+    </StyledButton>
+  );
+}
 
-  &:active {
-    background: ${({ theme }) => theme.colors.primary.dark};
-  }
+Button.propTypes = {
+  type: PropTypes.string,
+  disabled: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+  danger: PropTypes.bool,
+  onClick: PropTypes.func,
+};
 
-  &[disabled] {
-    background: #ccc;
-    cursor: default;
-  }
-
-  ${({ theme, danger }) => (
-    danger && css`
-      background: ${theme.colors.danger.main};
-
-      &:hover {
-        background: ${theme.colors.danger.light};
-      }
-
-      &:active {
-        background: ${theme.colors.danger.dark};
-      }
-    `
-  )};
-`;
+Button.defaultProps = {
+  type: 'button',
+  disabled: false,
+  isLoading: false,
+  danger: false,
+  onClick: undefined,
+};
