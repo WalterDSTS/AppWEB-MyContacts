@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# AppWEB - MyContacts
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Criei essa aplicação para dar continuidade nos meus estudos sobre React.
+Diferente do que criei no projeto [Fundamentos React](https://github.com/WalterDSTS/Fundamentos-React),
+essa aplicação utiliza das funcionalidade do [Create React App](https://create-react-app.dev/)
+que automatiza o processo de configuração e inicialização de um novo projeto React,
+permitindo que os desenvolvedores comecem rapidamente a escrever código sem a
+necessidade de configurar manualmente o ambiente de desenvolvimento.
 
-## Available Scripts
+Assim como no primeiro projeto que criei, dei continuidade no uso das tecnologias lá utilizadas, aprimorando minhas práticas
+de estização, lógica do funcionamento e montagem dos componentes, uso dos hooks
+do React e suas possíveis aplicações.
 
-In the project directory, you can run:
+Note que na V1 desse projeto eu estou utilizando [React](https://react.dev/) 17 e
+[React Router Dom](https://v5.reactrouter.com/) 5.3. O intuito de começar utilizando
+essas versões foi praticar como entregar uma solução com pacotes "legados",
+atualizando as dependências do projeto conforme o mesmo evolui, aplicando assim os
+novos conceitos que essas atualizações trazem.
+
+## Sobre o Create React App
+
+Ao utilizar o Create React App, obtemos uma configuração pré-estabelecida com:
+
+1. Webpack: Um poderoso empacotador de módulos que transforma e agrupa o código
+   JavaScript, CSS e outros recursos para serem entregues ao navegador.
+
+2. Babel: Um compilador JavaScript moderno que permite que você escreva código
+   JavaScript usando as últimas funcionalidades da linguagem, mesmo que alguns navegadores ainda não as suportem.
+
+3. Jest: Um framework de testes para testar seus componentes e funcionalidades.
+
+4. ESLint: Uma ferramenta de análise de código que ajuda a manter um código JavaScript
+   consistente e sem erros.
+
+E outras configurações e dependências necessárias para criar aplicativos React de alto desempenho.
+
+## Tecnologias utilizadas
+Fora as tecnologias ja mencionadas que o CRA nos trás, o projeto utiliza das demais
+tecnologias na V1:
+
+- react
+- react-router-dom
+- styled-components
+
+## API do projeto
+Para utilizar essa aplicação, você deverá baixar e executar, simultaneamente a esta
+aplicação, uma API feita em node, link para a API [clicando aqui](https://github.com/WalterDSTS/API-MyContacts).
+
+## Scripts Disponíveis
+
+De acordo com a documentação do próprio CRA, esses são os comandos que podem ser
+utilizados no diretório do projeto e suas respectivas funcionalidades:
+
+### `yarn install`
+Instala todas as dependências que o projeto precisa para o seu correto funcionamento.
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Executa o aplicativo no modo de desenvolvimento.\
+Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo em seu navegador.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A página será recarregada quando você fizer alterações.\
+Você também pode ver quaisquer erros de lint no console.
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Inicia o executor de testes no modo interativo de observação.\
+Consulte a seção sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests) para obter mais informações.
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Compila o aplicativo para produção na pasta `build`.\
+Ele empacota o React corretamente no modo de produção e otimiza a construção para obter o melhor desempenho.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A compilação é minificada e os nomes dos arquivos incluem os hashes.\
+Seu aplicativo está pronto para ser implantado!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Consulte a seção sobre [implantação](https://facebook.github.io/create-react-app/docs/deployment) para obter mais informações.
 
 ### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+**Observação: esta é uma operação unilateral. Uma vez que você faça `eject`, não poderá voltar atrás!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se você não estiver satisfeito com a ferramenta de construção e as escolhas de configuração, você pode fazer o `eject` a qualquer momento. Este comando removerá a única dependência de construção do seu projeto.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Em vez disso, ele copiará todos os arquivos de configuração e as dependências transitivas (webpack, Babel, ESLint, etc.) diretamente para o seu projeto, para que você tenha total controle sobre eles. Todos os comandos, exceto `eject`, continuarão funcionando, mas apontarão para os scripts copiados para que você possa ajustá-los. Neste ponto, você está por sua conta e risco.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Você não precisa usar o `eject`. O conjunto de recursos selecionado é adequado para implantações pequenas e médias, e você não deve se sentir obrigado a usar esse recurso. No entanto, entendemos que essa ferramenta não seria útil se você não pudesse personalizá-la quando estiver pronto para isso.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
