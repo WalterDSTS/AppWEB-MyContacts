@@ -1,70 +1,15 @@
-import { useParams, useHistory } from 'react-router-dom';
-import { useEffect, useRef, useState } from 'react';
 import PageHeader from '../../components/PageHeader';
 import ContactForm from '../../components/ContactForm';
-import ContactsService from '../../services/ContactsService';
-
 import Loader from '../../components/Loader';
-import toast from '../../utils/toast';
-import useSafeAsyncAction from '../../hooks/useSafeAsyncAction';
+import useEditContact from './useEditContact';
 
 export default function EditContact() {
-  const [isLoading, setIsLoading] = useState(true);
-  const [contactName, setContactName] = useState('');
-  const contactFormRef = useRef(null);
-
-  const { id } = useParams();
-  const history = useHistory();
-  const safeAsyncAction = useSafeAsyncAction();
-
-  const handleSubmit = async (formData) => {
-    try {
-      const contact = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        category_id: formData.categoryId,
-      };
-
-      const updatedContactData = await ContactsService.updateContact(id, contact);
-
-      setContactName(updatedContactData.name);
-
-      toast({
-        type: 'success',
-        text: 'Contato editado com sucesso',
-      });
-    } catch {
-      toast({
-        type: 'danger',
-        text: 'Ocorreu um erro ao editar o contato!',
-      });
-    }
-  };
-
-  useEffect(() => {
-    async function loadContact() {
-      try {
-        const contact = await ContactsService.getContactById(id);
-
-        safeAsyncAction(() => {
-          contactFormRef.current.setFiedsValues(contact);
-          setIsLoading(false);
-          setContactName(contact.name);
-        });
-      } catch {
-        safeAsyncAction(() => {
-          history.push('/');
-          toast({
-            type: 'danger',
-            text: 'Contato não encontrado!',
-          });
-        });
-      }
-    }
-
-    loadContact();
-  }, [id, history, safeAsyncAction]);
+  const {
+    isLoading,
+    contactName,
+    contactFormRef,
+    handleSubmit,
+  } = useEditContact();
 
   return (
     <>
