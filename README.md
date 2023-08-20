@@ -12,7 +12,7 @@ de estização, lógica do funcionamento e montagem dos componentes, uso dos hoo
 do React e suas possíveis aplicações.
 
 Note que na V1 desse projeto eu estou utilizando [React](https://react.dev/) 17 e
-[React Router Dom](https://v5.reactrouter.com/) 5.3. O intuito de começar utilizando
+[React Router Dom](https://v5.reactrouter.com/) 5. O intuito de começar utilizando
 essas versões foi praticar como entregar uma solução com pacotes "legados",
 atualizando as dependências do projeto conforme o mesmo evolui, aplicando assim os
 novos conceitos que essas atualizações trazem.
@@ -36,7 +36,7 @@ E outras configurações e dependências necessárias para criar aplicativos Rea
 
 ## Tecnologias utilizadas
 Fora as tecnologias ja mencionadas que o CRA nos trás, o projeto utiliza das demais
-tecnologias na V1:
+tecnologias:
 
 - react
 - react-router-dom
@@ -61,11 +61,6 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo em seu na
 
 A página será recarregada quando você fizer alterações.\
 Você também pode ver quaisquer erros de lint no console.
-
-### `yarn test`
-
-Inicia o executor de testes no modo interativo de observação.\
-Consulte a seção sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests) para obter mais informações.
 
 ### `yarn build`
 

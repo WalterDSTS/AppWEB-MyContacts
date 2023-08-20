@@ -8,14 +8,17 @@ class ContactsService {
     this.httpClient = new HttpClient(baseUrl);
   }
 
-  async listContacts(orderBy = 'asc') {
-    const contacts = await this.httpClient.get(`/contacts?orderBy=${orderBy}`);
+  async listContacts(orderBy, signal) {
+    const contacts = await this.httpClient.get(
+      `/contacts?orderBy=${orderBy || 'asc'}`,
+      { signal },
+    );
 
     return contacts.map((contact) => ContactMapper.toDomain(contact));
   }
 
-  async getContactById(id) {
-    const contact = await this.httpClient.get(`/contacts/${id}`);
+  async getContactById(id, signal) {
+    const contact = await this.httpClient.get(`/contacts/${id}`, { signal });
 
     return ContactMapper.toDomain(contact);
   }
